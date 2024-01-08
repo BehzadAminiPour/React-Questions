@@ -1,5 +1,4 @@
 import { useState } from "react";
-import SingleQuestion from "./SingleQuestion";
 
 const data = [
   { id: 1, question: "What is your name?" },
@@ -10,7 +9,6 @@ const data = [
 ];
 
 export default function PracticeUseState() {
-  //   const [questions, setQuestions] = useState([]);
   const [num, setNum] = useState(0);
   const handleNextClick = () => {
     setNum((prevNum) => {
@@ -29,13 +27,6 @@ export default function PracticeUseState() {
       <p>
         {data[num].id}.{data[num].question}
       </p>
-      {/* {questions.map((item) => (
-        <SingleQuestion
-          key={item.id}
-          number={item.id}
-          content={item.question}
-        />
-      ))} */}
       {num > 0 ? (
         <button onClick={handlePrevClick}>Prev question</button>
       ) : (
