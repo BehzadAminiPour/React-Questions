@@ -1,12 +1,20 @@
-import AppUseState from "./1.useState/AppUseState";
-import PracticeUseState from "./1.useState/PracticeUseState";
-import PracticeUseStateAI from "./1.useState/PracticeUseStateAI";
+// import { UseReducer } from "./3.useReducer/UseReducer";
+
+import { useContext } from "react";
+import { ThemeContext } from "./4.useContext/theme";
+import UseRef from "./5.useRef/UseRef";
+
 function App() {
+  const [theme, toggleTheme] = useContext(ThemeContext);
+
   return (
     <>
-      {/* <AppUseState /> */}
-      <PracticeUseState/>
-      <PracticeUseStateAI/>
+      {/* <UseReducer /> */}
+      <h1 style={{ background: theme.background, color: theme.foreground }}>
+        Hello, Context!
+      </h1>
+      <button onClick={()=>toggleTheme()}>Change Mode</button>
+      <UseRef/>
     </>
   );
 }
